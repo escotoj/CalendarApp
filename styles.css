@@ -1,0 +1,9 @@
+#headline {
+    border-style: solid;
+    text-align: center;
+    background-color: rgb(70, 187, 30);
+    border-width: 2px;
+    padding: 1px;
+    flex: 0 0 300px;
+    margin: 10px;
+  }
