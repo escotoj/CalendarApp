@@ -6,13 +6,17 @@ A calander with todays date on it and all the hours of the day with the ability 
 ## Progress
 Copied the REPO and cloned. 
 created the files needed, must build out the bones of html at least 
+using jquery to target id and add the current date.
+used the button to save what is in the text box
+must now create a if else statement for three conditions, green when it matches the date and time, grey whhen the time past and green if the time has yet to come (maybe use === and < or >)
+have created the if statements but nothing is changing
+also reformatter the dayjs display.
+
 
 # Questions
-you need to do is add the day date const from original attempt.
-how to add the date and change acording to day using jqurey and day.js
-break down to 9 rows, (9-5 workday)
-color code for past, current and future hour. 
-click on time block and be able to write in it. 
+how to write the if statement 
+jquery it some more.
+how to make sure the text that is input is saved after reload of page
 
 
 
@@ -20,4 +24,4 @@ click on time block and be able to write in it.
 Github: https://github.com/escotoj/CalendarApp
 Deployed App: https://escotoj.github.io/CalendarApp/ 
 
-![this is an image](PotterQuiz.png)
+![this is an image]()

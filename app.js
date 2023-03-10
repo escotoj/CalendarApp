@@ -1,5 +1,5 @@
 
-const currentDate = dayjs().format('MM/DD/YYYY');
+const currentDate = dayjs().format('dddd: hA MM-DD-YYYY');
 console.log(currentDate)
 
 var displayDate = $(`#currentDay`);
@@ -42,16 +42,42 @@ $(function () {
 
 var saveBtnArray = document.querySelectorAll(".saveBtn");
 
+var timeBlock = document.getElementsByClassName("time-block");
+
+// var timeBlock = document.getElementsByClassName("time-block");
+
+
 for (let i = 0; i < saveBtnArray.length; i++) {
   const saveButton = saveBtnArray[i];
+  
+  if (dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))) {(
+    timeBlock[i].classList[2] = "present")} 
+  else if (dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))) {
+      timeBlock[i].classList[2] = "past"        
+    } 
+  else {
+    timeBlock[i].classList[2] = "future"
+  };
   
   saveButton.addEventListener("click", function (event) {
     // event.preventDefault()
   console.log(event.target.parentNode.children[1].value)
   
   localStorage.setItem(`time${i}`, event.target.parentNode.children[1].value )
-});
+
 }
+)};
+const timeMap = {
+  "hour-9": "9AM",
+  "hour-10": "10AM"
+}
+console.log(timeBlock[0].id)
+
+dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))
+event.target.get
+
+
+
 
 // console.log(saveBtn)
 // saveBtn.addEventListener("click", function (event) {
@@ -72,6 +98,7 @@ for (let i = 0; i < saveBtnArray.length; i++) {
 // needs a date for current day, assign variable and than use dayjs and .textcontent
 // var date = $(`dayjs`)
 // Date() may be similar to dayjs 
-// var date = Date();
+var hour = Date();
+console.log(hour)
 
 // console.log(displayDate)
