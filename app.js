@@ -1,6 +1,5 @@
-
-const currentDate = dayjs().format('dddd: hA MM-DD-YYYY');
-console.log(currentDate)
+const currentDate = dayjs().format("dddd: hA MM-DD-YYYY");
+console.log(currentDate);
 
 var displayDate = $(`#currentDay`);
 // const displayDate = document.getElementById("currentDay");
@@ -8,13 +7,7 @@ displayDate.text(currentDate);
 
 // displayDate.textContent = "hello"
 
-
 // displayDate.text(currentDate);
-
-
-
-
-
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -44,40 +37,53 @@ var saveBtnArray = document.querySelectorAll(".saveBtn");
 
 var timeBlock = document.getElementsByClassName("time-block");
 
-// var timeBlock = document.getElementsByClassName("time-block");
+
+
+
+
 
 
 for (let i = 0; i < saveBtnArray.length; i++) {
   const saveButton = saveBtnArray[i];
-  
-  if (dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))) {(
-    timeBlock[i].classList[2] = "present")} 
-  else if (dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))) {
-      timeBlock[i].classList[2] = "past"        
-    } 
-  else {
-    timeBlock[i].classList[2] = "future"
-  };
-  
+  var divBody = saveButton.parentElement;
+  var currentHour = parseInt(dayjs().format("H"));
+  var divHour = parseInt(divBody.getAttribute("id").split("-")[1]);
+
+  if (currentHour === divHour) {
+    console.log(currentHour, divHour, "present");
+    // timeBlock.classList.add("present");
+    timeBlock[i].classList[2] = "present";
+  } else if (divHour < currentHour) {
+    console.log(currentHour, timeBlock[i].classList[2], "past");
+    timeBlock[i].classList[2] = "past";
+  } else {
+    console.log(currentHour, divHour, "future");
+    timeBlock[i].classList[2] = "future";
+  }
+
   saveButton.addEventListener("click", function (event) {
+    // if (currentDate === timeBlock) {
+    //   timeBlock[i].classList[2] = "present";
+    // } else if (event.target < currentDate) {
+    //   timeBlock[i].classList[2] = "past";
+    // } else {
+    //   timeBlock[i].classList[2] = "future";
+    // }
     // event.preventDefault()
-  console.log(event.target.parentNode.children[1].value)
-  
-  localStorage.setItem(`time${i}`, event.target.parentNode.children[1].value )
+    console.log(event.target.parentNode.children[1].value);
 
+    localStorage.setItem(`time${i}`, event.target.parentNode.children[1].value);
+
+    localStorage.getItem(`time${i}`, event.target.parentNode.children[1].value);
+  });
 }
-)};
-const timeMap = {
-  "hour-9": "9AM",
-  "hour-10": "10AM"
-}
-console.log(timeBlock[0].id)
 
-dayjs().isBefore(dayjs(timeMap[timeBlock[i].id]))
-event.target.get
+var saved = localStorage.getItem("saved");
 
+// saved.textContent = saved;
 
-
+// var name = localStorage.getItem(".saveBtn");
+// console.log(name);
 
 // console.log(saveBtn)
 // saveBtn.addEventListener("click", function (event) {
@@ -86,10 +92,8 @@ event.target.get
 // });
 
 // saveBtn.on("click", function (event) {
-//     var 
+//     var
 //   });
-
-
 
 // var date = $('dayjs'.textcontent)
 // var displayDate = document.querySelectorAll("headline");
@@ -97,8 +101,8 @@ event.target.get
 // click button to render app
 // needs a date for current day, assign variable and than use dayjs and .textcontent
 // var date = $(`dayjs`)
-// Date() may be similar to dayjs 
-var hour = Date();
-console.log(hour)
+// Date() may be similar to dayjs
+// var hour = Date();
+// console.log(hour)
 
 // console.log(displayDate)
