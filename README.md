@@ -11,13 +11,7 @@ used the button to save what is in the text box
 must now create a if else statement for three conditions, green when it matches the date and time, grey whhen the time past and green if the time has yet to come (maybe use === and < or >)
 have created the if statements but nothing is changing
 also reformatter the dayjs display.
-
-
-# Questions
-how to write the if statement 
-jquery it some more.
-how to make sure the text that is input is saved after reload of page
-
+created a for-loop for the buttons (learning more about arrays)
 
 
 ### Links and Screenshots
